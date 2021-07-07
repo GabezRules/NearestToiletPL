@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_splashFragment_to_wrongLocationFragment"
             app:destination="@id/wrongLocationFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_selectLanguageFragment"
+            app:destination="@id/selectLanguageFragment" />
     </fragment>
     <fragment
         android:id="@+id/wrongLocationFragment"
@@ -20,6 +23,15 @@
         tools:layout="@layout/fragment_wrong_location">
         <action
             android:id="@+id/action_wrongLocationFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLanguageFragment"
+        android:name="com.gabez.nearesttoiletpl.ui.fragments.select_language.SelectLanguageFragment"
+        android:label="fragment_select_language"
+        tools:layout="@layout/fragment_select_language" >
+        <action
+            android:id="@+id/action_selectLanguageFragment_to_splashFragment"
             app:destination="@id/splashFragment" />
     </fragment>
 </navigation>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.wrong_location.WrongLocationFragment">
+
+    <ImageView
+        android:id="@+id/blob"
+        style="@style/AppWidgetStyle"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="64dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/blob"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragmentSubtitle"
+        style="@style/AppWidgetStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:paddingHorizontal="32dp"
+        android:text="please wait for the update for your country... or visit Poland for testing :)"
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray_color"
+        android:textFontWeight="400"
+        android:textSize="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentTitle" />
+
+    <TextView
+        android:id="@+id/fragmentTitle"
+        style="@style/AppWidgetStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:paddingHorizontal="32dp"
+        android:text="we are sorry, our app is not supporting your location"
+        android:textAlignment="center"
+        android:textFontWeight="600"
+        android:textSize="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        style="@style/AppWidgetStyle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="72dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/global_map"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRetry"
+        app:layout_constraintLeft_toLeftOf="@+id/blob"
+        app:layout_constraintRight_toRightOf="@+id/blob" />
+
+    <ProgressBar
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRetry"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonRetry"
+        app:layout_constraintRight_toRightOf="@+id/buttonRetry"
+        app:layout_constraintTop_toTopOf="@+id/buttonRetry" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:paddingHorizontal="10dp"
+        android:text="retry"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blob" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,3 @@
 package com.gabez.nearesttoiletpl.api
 
-import org.json.JSONObject
-
-data class ApiResponse(val resultCode: Int, val status: ApiResponseStatus, val responseJson: JSONObject?, val optionalMessage: String?)
+data class ApiResponse(val status: ApiResponseStatus, val data: Any?, val optionalMessage: String? = "")

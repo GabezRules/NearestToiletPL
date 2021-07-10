@@ -7,4 +7,7 @@
     <string name="wrong_location_title">przepraszamy, nasza aplikacja nie wspiera Twojej lokalizacji</string>
     <string name="wrong_location_subtitle">poczekaj na aktualizację dla kraju, w którym się znajdujesz... albo odwiedź Polskę :)</string>
     <string name="retry">ODŚWIEŻ</string>
+    <string name="request_location_title">potrzebuję dostępu do lokalizacji!</string>
+    <string name="request_location_subtitle">przyznaj dostęp do lokalizacji, żeby umożliwić aplikacji odnalezienie wyników wyszukiwania</string>
+    <string name="request_location_button">używaj lokalizacji</string>
 </resources>

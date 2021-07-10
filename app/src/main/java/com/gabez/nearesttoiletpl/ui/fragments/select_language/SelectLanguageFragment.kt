@@ -41,7 +41,7 @@ class SelectLanguageFragment : Fragment() {
 
     private fun initSelect(view: View){
         val radioGroup: RadioGroup = view.findViewById(R.id.language_select)
-        radioGroup.setOnCheckedChangeListener { radioGroup, id ->
+        radioGroup.setOnCheckedChangeListener { rGroup, id ->
             when(id){
                 R.id.language_ENG -> languageString = LanguageOption.ENG.languageString
                 R.id.language_PL -> languageString = LanguageOption.PL.languageString

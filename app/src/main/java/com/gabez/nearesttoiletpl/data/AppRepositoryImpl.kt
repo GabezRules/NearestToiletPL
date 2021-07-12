@@ -5,17 +5,17 @@ import com.gabez.nearesttoiletpl.api.ApiResponse
 import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
 
-class AppRepositoryImpl constructor(): AppRepository {
+class AppRepositoryImpl constructor() : AppRepository {
 
     private val userCountryDatasource: UserCountryDatasource = LocationIqDatasource.instance()
 
-    override suspend fun getUserLocationCountry(lat: String, lon: String): LiveData<ApiResponse> {
-        return userCountryDatasource.getUserLocationCountry(
+    override suspend fun getUserLocationCountry(lat: String, lon: String) =
+        userCountryDatasource.getUserLocationCountry(
             lat, lon
         )
-    }
 
-    companion object{
+
+    companion object {
         public fun instance(): AppRepositoryImpl = AppRepositoryImpl()
     }
 }

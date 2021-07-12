@@ -8,7 +8,7 @@ import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 class GetUserCountryUsecase constructor() {
     private val appRepository: AppRepository = AppRepositoryImpl.instance()
 
-    suspend fun invoke(lat: String, lon: String): LiveData<ApiResponse> = appRepository.getUserLocationCountry(lat, lon)
+    suspend fun invoke(lat: String, lon: String) = appRepository.getUserLocationCountry(lat, lon)
 
     companion object{
         fun instance(): GetUserCountryUsecase = GetUserCountryUsecase()

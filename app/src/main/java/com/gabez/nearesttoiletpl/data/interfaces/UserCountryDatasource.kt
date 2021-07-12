@@ -4,5 +4,5 @@ import androidx.lifecycle.LiveData
 import com.gabez.nearesttoiletpl.api.ApiResponse
 
 interface UserCountryDatasource {
-    suspend fun getUserLocationCountry(lat: String, lon: String): LiveData<ApiResponse>
+    suspend fun getUserLocationCountry(lat: String, lon: String)
 }

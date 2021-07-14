@@ -3,6 +3,7 @@ package com.gabez.nearesttoiletpl.api.location_iq
 import com.gabez.nearesttoiletpl.api.ApiKeys
 import com.gabez.nearesttoiletpl.api.Env
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -14,10 +15,10 @@ interface LocationIqInterface {
 
     @Headers("Content-Type: application/json", "Accept: text/html, application/json")
     @GET("v1/reverse.php?format=json&key="+ApiKeys.locationIQ_APIkey)
-    fun getCurrentCountry(
+    suspend fun getCurrentCountry(
         @Query("lat") latitude: String,
         @Query("lon") longitude: String
-    ): Call<String>
+    ): Response<String>
 
     companion object {
         fun create(): LocationIqInterface {

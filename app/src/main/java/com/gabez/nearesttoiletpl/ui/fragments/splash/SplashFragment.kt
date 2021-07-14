@@ -49,7 +49,47 @@ class SplashFragment : Fragment() {
         if (!LocationUtils.hasLocationPermissions(requireContext())) {
             findNavController().navigate(R.id.action_splashFragment_to_requestLocationFragment)
         } else {
-            viewModel.processsUserCountry(requireContext())
+            viewModel.isUserInDesiredLocation(requireContext())
+            viewModel.getUserLocationLiveData().observe(viewLifecycleOwner, Observer{ response ->
+                if (response != null) {
+                    when (response.status) {
+                        ApiResponseStatus.OK -> {
+                            if (response.data!!.toString().equals("Poland")) {
+                                Toast.makeText(
+                                    context,
+                                    "Alles klar!",
+                                    Toast.LENGTH_LONG
+                                )
+                                    .show()
+                            } else {
+                                findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
+                            }
+                        }
+
+                        ApiResponseStatus.NOT_OK -> {
+                            Toast.makeText(
+                                context,
+                                "Api response is not ok! Contact developer for more information...",
+                                Toast.LENGTH_LONG
+                            )
+                                .show()
+
+                            findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
+                        }
+
+                        ApiResponseStatus.ERROR -> {
+                            Toast.makeText(
+                                context,
+                                "An error occured! Contact developer for more information...",
+                                Toast.LENGTH_LONG
+                            )
+                                .show()
+
+                            findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
+                        }
+                    }
+                } else Toast.makeText(context, "null response", Toast.LENGTH_LONG).show()
+            })
         }
 
         return view

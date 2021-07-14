@@ -98,47 +98,5 @@ class SplashFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() = SplashFragment()
-
-        @JvmStatic
-        fun processUserCountry(response: ApiResponse, context: Context){
-            if (response != null) {
-                when (response.status) {
-                    ApiResponseStatus.OK -> {
-                        if (response.data!!.toString().equals("Poland")) {
-                            Toast.makeText(
-                                context,
-                                "Alles klar!",
-                                Toast.LENGTH_LONG
-                            )
-                                .show()
-                        } else {
-                            //findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
-                        }
-                    }
-
-                    ApiResponseStatus.NOT_OK -> {
-                        Toast.makeText(
-                            context,
-                            "Api response is not ok! Contact developer for more information...",
-                            Toast.LENGTH_LONG
-                        )
-                            .show()
-
-                        //findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
-                    }
-
-                    ApiResponseStatus.ERROR -> {
-                        Toast.makeText(
-                            context,
-                            "An error occured! Contact developer for more information...",
-                            Toast.LENGTH_LONG
-                        )
-                            .show()
-
-                        //findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
-                    }
-                }
-            } else Toast.makeText(context, "null response", Toast.LENGTH_LONG).show()
-        }
     }
 }

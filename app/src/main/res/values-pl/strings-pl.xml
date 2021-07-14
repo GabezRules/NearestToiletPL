@@ -10,4 +10,7 @@
     <string name="request_location_title">potrzebuję dostępu do lokalizacji!</string>
     <string name="request_location_subtitle">przyznaj dostęp do lokalizacji, żeby umożliwić aplikacji odnalezienie wyników wyszukiwania</string>
     <string name="request_location_button">używaj lokalizacji</string>
+
+    <string name="service_unavailable">usługa niedostępna</string>
+    <string name="no_internet_alert">utracono połączenie z Internetem, proszę spróbować później...</string>
 </resources>

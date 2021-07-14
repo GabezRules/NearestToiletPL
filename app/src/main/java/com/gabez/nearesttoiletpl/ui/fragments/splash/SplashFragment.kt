@@ -1,6 +1,7 @@
 package com.gabez.nearesttoiletpl.ui.fragments.splash
 
 import android.content.Context
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +20,9 @@ import com.gabez.nearesttoiletpl.api.Env
 import com.gabez.nearesttoiletpl.api.location_iq.LocationIqInterface
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.gabez.nearesttoiletpl.location.LocationUtils
+import com.gabez.nearesttoiletpl.ui.MainActivity
 import com.gabez.nearesttoiletpl.ui.StartActivity
+import com.gabez.nearesttoiletpl.ui.fragments.MapsActivity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -55,12 +58,11 @@ class SplashFragment : Fragment() {
                     when (response.status) {
                         ApiResponseStatus.OK -> {
                             if (response.data!!.toString().equals("Poland")) {
-                                Toast.makeText(
-                                    context,
-                                    "Alles klar!",
-                                    Toast.LENGTH_LONG
-                                )
-                                    .show()
+
+                                val i: Intent = Intent(StartActivity.startActivityContext, MapsActivity::class.java)
+                                startActivity(i)
+                                StartActivity.startActivityContext.finish()
+
                             } else {
                                 findNavController().navigate(R.id.action_splashFragment_to_wrongLocationFragment)
                             }

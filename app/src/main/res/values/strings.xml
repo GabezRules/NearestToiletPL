@@ -12,4 +12,5 @@
 
     <string name="service_unavailable">service unavailable</string>
     <string name="no_internet_alert">lost connection to the Internet, please try again later...</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -37,7 +37,7 @@ class StartActivity : AppCompatActivity() {
     }
 
     companion object{
-        lateinit var startActivityContext: Context
+        lateinit var startActivityContext: StartActivity
         var noInternetDialog: AlertDialog? = null
 
         fun showNoInternetDialog() {

@@ -1,8 +1,11 @@
 package com.gabez.nearesttoiletpl.ui.fragments
 
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.gabez.nearesttoiletpl.R
+import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -10,11 +13,10 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var map: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +29,29 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         CurrentActivityUtil.currentActivityClassName = this.javaClass.name
     }
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        map = googleMap
 
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val location: Location? = LocationUtils.getUserLocation(this)
+
+        if (location != null) {
+            map.moveCamera(
+                CameraUpdateFactory.newLatLng(
+                    LatLng(
+                        location.latitude,
+                        location.longitude
+                    )
+                )
+            )
+
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    LatLng(
+                        location.latitude,
+                        location.longitude
+                    ), 20.0f
+                )
+            )
+
+        } else Toast.makeText(this, "Location error!", Toast.LENGTH_LONG).show()
     }
 }

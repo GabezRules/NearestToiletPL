@@ -62,7 +62,7 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
 
     // Jetpack Compose Integration
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha04"
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
 
     def lifecycle_version = "2.4.0-alpha02"
     def arch_version = "2.1.0"

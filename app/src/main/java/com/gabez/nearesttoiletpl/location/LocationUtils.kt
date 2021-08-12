@@ -23,7 +23,6 @@ object LocationUtils {
             for (provider in providers) {
                 val l: Location = mLocationManager.getLastKnownLocation(provider) ?: continue
                 if (bestLocation == null || l.accuracy < bestLocation.accuracy) {
-                    // Found best last known location: %s", l);
                     bestLocation = l
                 }
             }
@@ -45,4 +44,21 @@ object LocationUtils {
                 ))
     }
 
+    fun getBoundariesForSearch(context: Context, distanceInMeters: Int): SearchBoundaries {
+        //TODO: Check if is proper
+        val userLocation: Location = getUserLocation(context)!!
+
+        val oneLongitudeDegreeInKilometers = userLocation.latitude * 69.172f * 1.609344f
+        val lonDistance = Math.sqrt(oneLongitudeDegreeInKilometers);
+
+        val latDistance: Float = (distanceInMeters.toFloat())/1000/111
+
+        val minLat: Double = userLocation.latitude - latDistance
+        val maxLat: Double = userLocation.latitude + latDistance
+
+        val minLon: Double = userLocation.longitude - lonDistance
+        val maxLon: Double = userLocation.longitude + lonDistance
+
+        return SearchBoundaries(minLon, minLat, maxLon, maxLat)
+    }
 }

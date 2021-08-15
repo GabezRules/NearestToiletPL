@@ -40,15 +40,15 @@ object ApiResponseHelper {
         val jsonArray: JSONArray = JSONArray(data)
 
         try {
-            for (i in 0..jsonArray.length()) {
+            for (i in 0 until jsonArray.length()) {
                 val jsonObject: JSONObject = jsonArray.getJSONObject(i);
 
                 val address: JSONObject = jsonObject.getJSONObject("address")
 
                 val toilet: Toilet = Toilet(
                     placeId = jsonObject.getString("place_id"),
-                    lat = jsonObject.getDouble("lat"),
-                    lon = jsonObject.getDouble("lon"),
+                    lat = jsonObject.getString("lat").toDouble(),
+                    lon = jsonObject.getString("lon").toDouble(),
                     displayName = jsonObject.getString("display_name"),
                     neighbourhood = address.getString("neighbourhood"),
                     city = address.getString("city"),
@@ -63,7 +63,7 @@ object ApiResponseHelper {
             return ApiResponse(ApiResponseStatus.OK, toilets, null)
 
         } catch (e: JSONException) {
-            Log.e("API_ERROR", "error processing json: " + data)
+            Log.e("API_ERROR", "error processing json: " + e.message)
 
             return ApiResponse(
                 ApiResponseStatus.ERROR,

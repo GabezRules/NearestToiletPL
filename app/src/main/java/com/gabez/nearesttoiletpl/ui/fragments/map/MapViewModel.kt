@@ -36,7 +36,7 @@ class MapViewModel: ViewModel() {
 
                 if(response.isSuccessful){
                     nearbyToiletsLiveData.postValue(ApiResponseHelper.getApiResponseToiletsFromString(response.body()!!))
-                    currentToiletList = ApiResponseHelper.getApiResponseToiletsFromString(response.body()!!).data as List<Toilet>
+                    //currentToiletList = ApiResponseHelper.getApiResponseToiletsFromString(response.body()!!).data as List<Toilet>
                 } else nearbyToiletsLiveData.postValue(ApiResponse(ApiResponseStatus.NOT_OK, null, response.raw().toString()))
 
             }

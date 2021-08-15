@@ -54,23 +54,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val location: Location? = LocationUtils.getUserLocation(this)
 
         if (location != null) {
-            map.moveCamera(
-                CameraUpdateFactory.newLatLng(
-                    LatLng(
-                        location.latitude,
-                        location.longitude
-                    )
-                )
-            )
-
-            map.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(
-                    LatLng(
-                        location.latitude,
-                        location.longitude
-                    ), 20.0f
-                )
-            )
+            moveMapToLocation(location)
 
             getNearbyToilets()
             map.setOnMarkerClickListener(this)
@@ -126,6 +110,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 markeroptions
             )
         }
+
+        val mapLocation = Location(toilets[0].displayName)
+        mapLocation.latitude = toilets[0].lat;
+        mapLocation.longitude = toilets[0].lon;
+
+        moveMapToLocation(mapLocation)
+    }
+
+    fun moveMapToLocation(location: Location){
+        map.moveCamera(
+            CameraUpdateFactory.newLatLng(
+                LatLng(
+                    location.latitude,
+                    location.longitude
+                )
+            )
+        )
+
+        map.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(
+                    location.latitude,
+                    location.longitude
+                ), 20.0f
+            )
+        )
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {

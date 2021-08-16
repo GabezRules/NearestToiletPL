@@ -13,4 +13,7 @@
 
     <string name="service_unavailable">usługa niedostępna</string>
     <string name="no_internet_alert">utracono połączenie z Internetem, proszę spróbować później...</string>
+
+    <string name="title_activity_maps">Mapa</string>
+    <string name="navigate">nawiguj</string>
 </resources>

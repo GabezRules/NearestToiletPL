@@ -11,6 +11,7 @@ import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
+import com.gabez.nearesttoiletpl.ui.fragments.toilet_details.ToiletDetailsFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -141,6 +142,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     override fun onMarkerClick(marker: Marker): Boolean {
         var currentToilet: Toilet? = null
         viewModel.currentToiletList.map { toilet ->  if(toilet.displayName == marker.snippet) currentToilet = toilet}
+
+        val bottomFragment: ToiletDetailsFragment = ToiletDetailsFragment(currentToilet!!, this)
+        bottomFragment.showBottomSheetDialog();
 
         return true;
     }

@@ -2,6 +2,7 @@ package com.gabez.nearesttoiletpl.data
 
 import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
+import com.gabez.nearesttoiletpl.location.SearchBoundaries
 import retrofit2.Response
 
 class AppRepositoryImpl : AppRepository {
@@ -13,8 +14,15 @@ class AppRepositoryImpl : AppRepository {
             lat, lon
         )
 
+    override suspend fun getNearbyToilets(bounds: SearchBoundaries): Response<String> =
+        userCountryDatasource.getNearbyToilets(bounds)
+
 
     companion object {
-        fun instance(): AppRepositoryImpl = AppRepositoryImpl()
+        private var appRepo: AppRepositoryImpl? = null;
+        fun instance(): AppRepositoryImpl{
+            if(appRepo==null) appRepo = AppRepositoryImpl();
+            return appRepo as AppRepositoryImpl;
+        }
     }
 }

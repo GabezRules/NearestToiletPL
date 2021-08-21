@@ -8,5 +8,8 @@ data class Toilet(
     val neighbourhood: String,
     val city: String,
     val postcode: String,
-    val road: String
+    val road: String,
+    val features: List<String> = ArrayList(),
+    val rate: Float = 0f,
+    val rateCount: Int = 0
 )

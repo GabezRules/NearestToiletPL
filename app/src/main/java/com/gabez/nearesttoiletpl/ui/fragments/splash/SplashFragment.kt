@@ -2,9 +2,7 @@ package com.gabez.nearesttoiletpl.ui.fragments.splash
 
 import android.content.Context
 import android.content.Intent
-import android.location.Location
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,21 +12,11 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.nearesttoiletpl.api.ApiResponse
 import com.gabez.nearesttoiletpl.api.ApiResponseStatus
-import com.gabez.nearesttoiletpl.api.Env
-import com.gabez.nearesttoiletpl.api.location_iq.LocationIqInterface
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.gabez.nearesttoiletpl.location.LocationUtils
-import com.gabez.nearesttoiletpl.ui.MainActivity
 import com.gabez.nearesttoiletpl.ui.StartActivity
-import com.gabez.nearesttoiletpl.ui.fragments.MapsActivity
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.gabez.nearesttoiletpl.ui.fragments.map.MapsActivity
 
 class SplashFragment : Fragment() {
 

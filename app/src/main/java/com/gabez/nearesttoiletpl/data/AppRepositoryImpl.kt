@@ -4,10 +4,12 @@ import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
 import com.gabez.nearesttoiletpl.location.SearchBoundaries
 import retrofit2.Response
+import javax.inject.Inject
 
 class AppRepositoryImpl : AppRepository {
 
-    private val userCountryDatasource: UserCountryDatasource = LocationIqDatasource.instance()
+    @Inject
+    lateinit var userCountryDatasource: UserCountryDatasource
 
     override suspend fun getUserLocationCountry(lat: String, lon: String): Response<String> =
         userCountryDatasource.getUserLocationCountry(

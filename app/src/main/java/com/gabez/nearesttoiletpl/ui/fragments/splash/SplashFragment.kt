@@ -17,10 +17,14 @@ import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.StartActivity
 import com.gabez.nearesttoiletpl.ui.fragments.map.MapsActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
 
-    var viewModel: SplashViewModel = SplashViewModel.instance()
+    @Inject
+    lateinit var viewModel: SplashViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -8,7 +8,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gabez.nearesttoiletpl.NetworkUtil
 import com.gabez.nearesttoiletpl.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

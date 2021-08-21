@@ -16,9 +16,10 @@ import com.gabez.nearesttoiletpl.SharedPreferenceKeys
 import com.gabez.nearesttoiletpl.language_options.LanguageOption
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
-
+@AndroidEntryPoint
 class SelectLanguageFragment : Fragment() {
 
     private var languageString: String = "en_US";

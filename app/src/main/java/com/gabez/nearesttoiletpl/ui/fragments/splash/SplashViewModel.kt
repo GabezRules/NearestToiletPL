@@ -7,13 +7,17 @@ import com.gabez.nearesttoiletpl.api.ApiResponse
 import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.GetUserCountryUsecase
 import com.gabez.nearesttoiletpl.api.helpers.ApiResponseHelper
+import com.gabez.nearesttoiletpl.domain.GetNearbyToiletsUsecase
 import com.gabez.nearesttoiletpl.location.LocationUtils
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-class SplashViewModel : ViewModel() {
-    private val getUserCountryUseCase: GetUserCountryUsecase = GetUserCountryUsecase.instance()
+@HiltViewModel
+class SplashViewModel @Inject constructor(val getUserCountryUseCase: GetUserCountryUsecase) : ViewModel() {
+
     private val userLocationLiveData: MutableLiveData<ApiResponse> = MutableLiveData()
 
     fun getUserLocationLiveData(): LiveData<ApiResponse> = userLocationLiveData
@@ -36,14 +40,4 @@ class SplashViewModel : ViewModel() {
                 }
             }
         }
-
-
-    companion object {
-        private var vm: SplashViewModel? = null
-
-        fun instance(): SplashViewModel{
-            if(vm==null)  vm = SplashViewModel();
-            return vm as SplashViewModel;
-        }
-    }
 }

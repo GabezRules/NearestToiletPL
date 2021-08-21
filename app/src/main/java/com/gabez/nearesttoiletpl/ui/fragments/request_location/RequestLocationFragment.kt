@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RequestLocationFragment : Fragment() {
 
     override fun onCreateView(

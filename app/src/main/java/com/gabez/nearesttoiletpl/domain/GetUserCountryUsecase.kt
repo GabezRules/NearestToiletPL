@@ -5,13 +5,9 @@ import com.gabez.nearesttoiletpl.api.ApiResponse
 import com.gabez.nearesttoiletpl.data.AppRepositoryImpl
 import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import retrofit2.Response
+import javax.inject.Inject
 
-class GetUserCountryUsecase constructor() {
-    private val appRepository: AppRepository = AppRepositoryImpl.instance()
+class GetUserCountryUsecase @Inject constructor(val appRepository: AppRepository) {
 
     suspend fun invoke(lat: String, lon: String): Response<String> = appRepository.getUserLocationCountry(lat, lon)
-
-    companion object{
-        fun instance(): GetUserCountryUsecase = GetUserCountryUsecase()
-    }
 }

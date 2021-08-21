@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.google.android.material.bottomsheet.BottomSheetDialog
-
+import dagger.hilt.android.AndroidEntryPoint
 
 class ToiletDetailsFragment(val toilet: Toilet, val context: Context) {
     private var bottomSheetDialog: BottomSheetDialog

@@ -2,10 +2,7 @@ package com.gabez.nearesttoiletpl.ui.fragments.map
 
 import android.content.Context
 import android.location.Location
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.gabez.nearesttoiletpl.api.ApiResponse
 import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.api.helpers.ApiResponseHelper

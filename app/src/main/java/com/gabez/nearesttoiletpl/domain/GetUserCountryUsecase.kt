@@ -7,10 +7,7 @@ import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import retrofit2.Response
 import javax.inject.Inject
 
-class GetUserCountryUsecase() {
-
-    @Inject
-    lateinit var appRepository: AppRepository
+class GetUserCountryUsecase @Inject constructor(val appRepository: AppRepository) {
 
     suspend fun invoke(lat: String, lon: String): Response<String> = appRepository.getUserLocationCountry(lat, lon)
 }

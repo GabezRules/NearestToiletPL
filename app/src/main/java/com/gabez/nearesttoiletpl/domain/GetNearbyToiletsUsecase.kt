@@ -1,16 +1,16 @@
 package com.gabez.nearesttoiletpl.domain
 
-import com.gabez.nearesttoiletpl.data.AppRepositoryImpl
 import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.location.SearchBoundaries
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Response
+import javax.inject.Inject
 
 class GetNearbyToiletsUsecase {
-    private val appRepository: AppRepository = AppRepositoryImpl.instance()
 
-    suspend fun invoke(bounds: SearchBoundaries): Response<String> = appRepository.getNearbyToilets(bounds)
+    @Inject
+    lateinit var appRepository: AppRepository
 
-    companion object{
-        fun instance(): GetNearbyToiletsUsecase = GetNearbyToiletsUsecase()
-    }
+    suspend fun invoke(bounds: SearchBoundaries): Response<String> =
+        appRepository.getNearbyToilets(bounds)
 }

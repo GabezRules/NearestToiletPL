@@ -12,13 +12,16 @@ import com.gabez.nearesttoiletpl.api.helpers.ApiResponseHelper
 import com.gabez.nearesttoiletpl.domain.GetNearbyToiletsUsecase
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.location.LocationUtils
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-class MapViewModel: ViewModel() {
+@HiltViewModel
+class MapViewModel @Inject constructor(val getNearbyToiletsUsecase: GetNearbyToiletsUsecase):
+    ViewModel() {
 
-    private val getNearbyToiletsUsecase: GetNearbyToiletsUsecase = GetNearbyToiletsUsecase.instance()
     private val nearbyToiletsLiveData: MutableLiveData<ApiResponse> = MutableLiveData()
     var currentToiletList: List<Toilet> = ArrayList()
 
@@ -40,15 +43,6 @@ class MapViewModel: ViewModel() {
                 } else nearbyToiletsLiveData.postValue(ApiResponse(ApiResponseStatus.NOT_OK, null, response.raw().toString()))
 
             }
-        }
-    }
-
-    companion object {
-        private var vm: MapViewModel? = null
-
-        fun instance(): MapViewModel{
-            if(vm==null)  vm = MapViewModel();
-            return vm as MapViewModel;
         }
     }
 }

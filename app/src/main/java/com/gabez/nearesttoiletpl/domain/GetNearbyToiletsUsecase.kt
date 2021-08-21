@@ -6,10 +6,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Response
 import javax.inject.Inject
 
-class GetNearbyToiletsUsecase {
-
-    @Inject
-    lateinit var appRepository: AppRepository
+class GetNearbyToiletsUsecase @Inject constructor(val appRepository: AppRepository) {
 
     suspend fun invoke(bounds: SearchBoundaries): Response<String> =
         appRepository.getNearbyToilets(bounds)

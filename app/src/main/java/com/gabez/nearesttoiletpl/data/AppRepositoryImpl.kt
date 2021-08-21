@@ -4,10 +4,9 @@ import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
 import com.gabez.nearesttoiletpl.location.SearchBoundaries
 import retrofit2.Response
+import javax.inject.Inject
 
-class AppRepositoryImpl : AppRepository {
-
-    private val userCountryDatasource: UserCountryDatasource = LocationIqDatasource.instance()
+class AppRepositoryImpl @Inject constructor(val userCountryDatasource: UserCountryDatasource) : AppRepository {
 
     override suspend fun getUserLocationCountry(lat: String, lon: String): Response<String> =
         userCountryDatasource.getUserLocationCountry(
@@ -16,13 +15,4 @@ class AppRepositoryImpl : AppRepository {
 
     override suspend fun getNearbyToilets(bounds: SearchBoundaries): Response<String> =
         userCountryDatasource.getNearbyToilets(bounds)
-
-
-    companion object {
-        private var appRepo: AppRepositoryImpl? = null;
-        fun instance(): AppRepositoryImpl{
-            if(appRepo==null) appRepo = AppRepositoryImpl();
-            return appRepo as AppRepositoryImpl;
-        }
-    }
 }

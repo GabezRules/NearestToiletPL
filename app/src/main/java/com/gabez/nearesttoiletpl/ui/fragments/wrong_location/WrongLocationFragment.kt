@@ -9,10 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import kotlin.concurrent.schedule
 
-
+@AndroidEntryPoint
 class WrongLocationFragment : Fragment() {
 
     override fun onCreateView(

@@ -16,4 +16,9 @@
 
     <string name="title_activity_maps">Mapa</string>
     <string name="navigate">nawiguj</string>
+    <string name="rate">oceń</string>
+    <string name="overall_rate">ogólna ocena</string>
+    <string name="perks">dodatkowe udogodnienia</string>
+    <string name="accept">akceptuj</string>
+    <string name="cancel">anuluj</string>
 </resources>

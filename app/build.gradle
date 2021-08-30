@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-parcelize'
 
     //id 'kotlin-kapt'
     //id 'dagger.hilt.android.plugin'
@@ -101,6 +102,7 @@ dependencies {
     //implementation "com.google.dagger:hilt-android:$hilt_version"
     //kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
+    //Maps
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
 }

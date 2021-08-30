@@ -8,14 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
-import com.gabez.nearesttoiletpl.api.ApiResponseStatus
-import com.gabez.nearesttoiletpl.domain.entity.Toilet
+import com.gabez.locationiq_api.api.ApiResponseStatus
+import com.gabez.app_database.room_database.entity.Toilet
 import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback

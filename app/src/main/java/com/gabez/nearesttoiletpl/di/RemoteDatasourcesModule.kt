@@ -1,15 +1,12 @@
 package com.gabez.nearesttoiletpl.di
 
-import com.gabez.nearesttoiletpl.api.location_iq.LocationIQAutocompleteInterface
-import com.gabez.nearesttoiletpl.api.location_iq.LocationIQReverseGeocodingInterface
-import com.gabez.nearesttoiletpl.data.AppRepositoryImpl
+import com.gabez.locationiq_api.api.location_iq.LocationIQAutocompleteInterface
+import com.gabez.locationiq_api.api.location_iq.LocationIQReverseGeocodingInterface
 import com.gabez.nearesttoiletpl.data.LocationIqDatasource
-import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 
 @Module

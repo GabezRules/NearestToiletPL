@@ -15,4 +15,9 @@
 
     <string name="title_activity_maps">Map</string>
     <string name="navigate">navigate</string>
+    <string name="rate">rate</string>
+    <string name="overall_rate">overall rate</string>
+    <string name="perks">additional perks</string>
+    <string name="accept">accept</string>
+    <string name="cancel">cancel</string>
 </resources>

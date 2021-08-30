@@ -1,4 +1,4 @@
-package com.gabez.nearesttoiletpl.ui
+package com.gabez.nearesttoiletpl.ui.fragments
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -8,13 +8,16 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gabez.nearesttoiletpl.NetworkUtil
 import com.gabez.nearesttoiletpl.R
+import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 
-class StartActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start)
+        setContentView(R.layout.activity_maps)
 
-        startActivityContext = this
+        mainActivityContext = this
         CurrentActivityUtil.currentActivityClassName = this.javaClass.name
 
         if (NetworkUtil.getConnectivityStatus(this) === 0) {
@@ -37,18 +40,16 @@ class StartActivity : AppCompatActivity() {
     }
 
     companion object{
-        lateinit var startActivityContext: StartActivity
+        lateinit var mainActivityContext: MainActivity
         var noInternetDialog: AlertDialog? = null
 
         fun showNoInternetDialog() {
-            if (startActivityContext != null) {
-                noInternetDialog =
-                    AlertDialog.Builder(startActivityContext).create()
-                noInternetDialog!!.setTitle(startActivityContext.resources.getString(R.string.service_unavailable))
-                noInternetDialog!!.setMessage(startActivityContext.resources.getString(R.string.no_internet_alert))
-                noInternetDialog!!.setCancelable(false)
-                noInternetDialog!!.show()
-            }
+            noInternetDialog =
+                AlertDialog.Builder(mainActivityContext).create()
+            noInternetDialog!!.setTitle(mainActivityContext.resources.getString(R.string.service_unavailable))
+            noInternetDialog!!.setMessage(mainActivityContext.resources.getString(R.string.no_internet_alert))
+            noInternetDialog!!.setCancelable(false)
+            noInternetDialog!!.show()
         }
 
         fun hideNoInternetDialog() {

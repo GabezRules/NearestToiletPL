@@ -15,8 +15,8 @@ import com.gabez.nearesttoiletpl.SharedPreferenceKeys
 import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.gabez.nearesttoiletpl.location.LocationUtils
-import com.gabez.nearesttoiletpl.ui.StartActivity
-import com.gabez.nearesttoiletpl.ui.fragments.map.MapsActivity
+import com.gabez.nearesttoiletpl.ui.fragments.StartActivity
+import com.gabez.nearesttoiletpl.ui.fragments.MainActivity
 
 class SplashFragment : Fragment() {
 
@@ -47,7 +47,7 @@ class SplashFragment : Fragment() {
                         ApiResponseStatus.OK -> {
                             if (response.data!!.toString().equals("Poland")) {
 
-                                val i: Intent = Intent(StartActivity.startActivityContext, MapsActivity::class.java)
+                                val i: Intent = Intent(StartActivity.startActivityContext, MainActivity::class.java)
                                 startActivity(i)
                                 StartActivity.startActivityContext.finish()
 

@@ -21,10 +21,10 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".ui.fragments.map.MapsActivity"
+            android:name=".ui.fragments.MainActivity"
             android:label="@string/title_activity_maps"/>
 
-        <activity android:name=".ui.StartActivity">
+        <activity android:name=".ui.fragments.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

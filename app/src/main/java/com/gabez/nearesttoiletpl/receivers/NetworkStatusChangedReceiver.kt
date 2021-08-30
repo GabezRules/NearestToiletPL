@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import com.gabez.nearesttoiletpl.NetworkUtil
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
-import com.gabez.nearesttoiletpl.ui.StartActivity
+import com.gabez.nearesttoiletpl.ui.fragments.StartActivity
 
 class NetworkStatusChangedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

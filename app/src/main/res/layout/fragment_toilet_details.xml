@@ -94,6 +94,25 @@
             app:layout_constraintTop_toBottomOf="@id/ratingBar" />
 
         <LinearLayout
+            android:id="@+id/perksContainer"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/divider2"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:alpha="0.3"
+            android:background="@color/dark_gray_color"
+            app:layout_constraintTop_toBottomOf="@id/perksContainer" />
+
+        <LinearLayout
             android:id="@+id/navigateBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,14 +121,16 @@
             android:orientation="horizontal"
             android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/rateBtn"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider2">
+            app:layout_constraintTop_toBottomOf="@id/divider3">
 
             <ImageView
                 android:background="@color/white"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/navigate" />
 
             <TextView
@@ -119,7 +140,39 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:text="@string/navigate"
-                android:textSize="20sp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dark_gray_rounded_corners"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintRight_toLeftOf="@id/navigateBtn"
+            app:layout_constraintTop_toBottomOf="@id/divider3">
+
+            <ImageView
+                android:background="@color/white"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/rate" />
+
+            <TextView
+                android:textColor="@color/dark_gray_color"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/rate"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

@@ -9,13 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gabez.nearesttoiletpl.NetworkUtil
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
+        setContentView(R.layout.activity_main)
 
         mainActivityContext = this
         CurrentActivityUtil.currentActivityClassName = this.javaClass.name

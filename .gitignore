@@ -7,6 +7,8 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/app/src/main/java/com/gabez/nearesttoiletpl/api/ApiKeys.kt
+/app/src/release/res/values/google_maps_api.xml
 .DS_Store
 /build
 /captures

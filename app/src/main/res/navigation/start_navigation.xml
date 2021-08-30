@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.gabez.nearesttoiletpl.ui.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_wrongLocationFragment"
+            app:destination="@id/wrongLocationFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_selectLanguageFragment"
+            app:destination="@id/selectLanguageFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_requestLocationFragment"
+            app:destination="@id/requestLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrongLocationFragment"
+        android:name="com.gabez.nearesttoiletpl.ui.fragments.wrong_location.WrongLocationFragment"
+        android:label="fragment_wrong_location"
+        tools:layout="@layout/fragment_wrong_location">
+        <action
+            android:id="@+id/action_wrongLocationFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLanguageFragment"
+        android:name="com.gabez.nearesttoiletpl.ui.fragments.select_language.SelectLanguageFragment"
+        android:label="fragment_select_language"
+        tools:layout="@layout/fragment_select_language" >
+        <action
+            android:id="@+id/action_selectLanguageFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestLocationFragment"
+        android:name="com.gabez.nearesttoiletpl.ui.fragments.request_location.RequestLocationFragment"
+        android:label="fragment_request_location"
+        tools:layout="@layout/fragment_request_location" >
+        <action
+            android:id="@+id/action_requestLocationFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+</navigation>

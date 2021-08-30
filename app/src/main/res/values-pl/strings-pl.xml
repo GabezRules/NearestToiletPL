@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NearestToiletPL</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_title">znajdź najbliższą toaletę</string>
+    <string name="wrong_location_title">przepraszamy, nasza aplikacja nie wspiera Twojej lokalizacji</string>
+    <string name="wrong_location_subtitle">poczekaj na aktualizację dla kraju, w którym się znajdujesz... albo odwiedź Polskę :)</string>
+    <string name="retry">ODŚWIEŻ</string>
+    <string name="request_location_title">potrzebuję dostępu do lokalizacji!</string>
+    <string name="request_location_subtitle">przyznaj dostęp do lokalizacji, żeby umożliwić aplikacji odnalezienie wyników wyszukiwania</string>
+    <string name="request_location_button">używaj lokalizacji</string>
+
+    <string name="service_unavailable">usługa niedostępna</string>
+    <string name="no_internet_alert">utracono połączenie z Internetem, proszę spróbować później...</string>
+
+    <string name="title_activity_maps">Mapa</string>
+    <string name="navigate">nawiguj</string>
+    <string name="rate">oceń</string>
+    <string name="overall_rate">ogólna ocena</string>
+    <string name="perks">dodatkowe udogodnienia</string>
+    <string name="accept">akceptuj</string>
+    <string name="cancel">anuluj</string>
+</resources>

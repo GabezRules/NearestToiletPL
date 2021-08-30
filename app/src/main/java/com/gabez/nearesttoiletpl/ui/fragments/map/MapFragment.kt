@@ -8,12 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.location.LocationUtils
+import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.gabez.nearesttoiletpl.ui.fragments.toilet_details.ToiletDetailsFragment
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -24,11 +28,14 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener, OpenRateToiletCallback {
 
     private lateinit var map: GoogleMap
-    private lateinit var viewModel: MapViewModel
+
+    private val viewModel: MapViewModel  by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,12 +43,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
     ): View? {
         var view: View = inflater.inflate(R.layout.fragment_map, container, false)
 
-        viewModel = MapViewModel.instance();
-
         val mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        CurrentActivityUtil.currentActivityClassName = this.javaClass.name
         return view
     }
 
@@ -162,4 +168,5 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
     override fun openRateToiletFragment() {
         findNavController().navigate(R.id.action_mapFragment_to_rateToiletFragment)
     }
+
 }

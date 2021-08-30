@@ -1,13 +1,19 @@
 package com.gabez.nearesttoiletpl.domain.entity
 
-import android.graphics.drawable.Drawable
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
 data class Perk(
-    var id: Int,
-    var namePl: String,
-    var nameEng: String,
-    var icon: Drawable,
-    var votes: Int = 0
+    @PrimaryKey val id: Int,
+
+    @ColumnInfo(name = "name_pl")
+    val namePl: String,
+
+    @ColumnInfo(name = "name_eng")
+    val nameEng: String,
+
+    @ColumnInfo(name = "icon_url")
+    val iconUrl: String
 )

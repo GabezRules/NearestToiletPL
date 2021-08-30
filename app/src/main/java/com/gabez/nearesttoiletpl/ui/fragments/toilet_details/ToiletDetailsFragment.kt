@@ -15,7 +15,6 @@ import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.language_options.LanguageOption
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import dagger.hilt.android.AndroidEntryPoint
 
 class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openRateToiletCallback: OpenRateToiletCallback) {
     private var bottomSheetDialog: BottomSheetDialog
@@ -59,7 +58,7 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
         val languageString =
             prefs.getString(SharedPreferenceKeys.languageOption, LanguageOption.ENG.languageString)
 
-        if (toilet.perks.size == 0) {
+        if (toilet.perkIds.size == 0) {
             perksContainer.visibility = View.GONE
             divider3.visibility = View.GONE
         } else {
@@ -67,7 +66,7 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
 
             val inflater: LayoutInflater = context.layoutInflater
 
-            for (perk in toilet.perks) {
+            for (perk in toilet.perkIds) {
                 val perkView: View = inflater.inflate(R.layout.view_perk, null)
                 val icon = perkView.findViewById<ImageView>(R.id.perkIcon);
                 val perkText = perkView.findViewById<TextView>(R.id.perkText);

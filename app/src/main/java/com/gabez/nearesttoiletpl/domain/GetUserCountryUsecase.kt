@@ -1,8 +1,5 @@
 package com.gabez.nearesttoiletpl.domain
 
-import androidx.lifecycle.LiveData
-import com.gabez.nearesttoiletpl.api.ApiResponse
-import com.gabez.nearesttoiletpl.data.AppRepositoryImpl
 import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
 import retrofit2.Response
 import javax.inject.Inject

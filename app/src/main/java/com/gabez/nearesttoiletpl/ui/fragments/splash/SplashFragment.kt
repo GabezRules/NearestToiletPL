@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.nearesttoiletpl.api.ApiResponseStatus
+import com.gabez.locationiq_api.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
 import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.fragments.StartActivity

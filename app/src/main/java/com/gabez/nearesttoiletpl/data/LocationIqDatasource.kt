@@ -1,7 +1,7 @@
 package com.gabez.nearesttoiletpl.data
 
-import com.gabez.nearesttoiletpl.api.location_iq.LocationIQAutocompleteInterface
-import com.gabez.nearesttoiletpl.api.location_iq.LocationIQReverseGeocodingInterface
+import com.gabez.locationiq_api.api.location_iq.LocationIQAutocompleteInterface
+import com.gabez.locationiq_api.api.location_iq.LocationIQReverseGeocodingInterface
 import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
 import com.gabez.nearesttoiletpl.location.SearchBoundaries
 import retrofit2.Response

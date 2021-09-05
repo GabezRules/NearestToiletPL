@@ -7,7 +7,7 @@ import com.gabez.locationiq_api.api.ApiResponse
 import com.gabez.locationiq_api.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.GetUserCountryUsecase
 import com.gabez.nearesttoiletpl.ApiResponseHelper
-import com.gabez.nearesttoiletpl.location.LocationUtils
+import com.gabez.data_access.LocationUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

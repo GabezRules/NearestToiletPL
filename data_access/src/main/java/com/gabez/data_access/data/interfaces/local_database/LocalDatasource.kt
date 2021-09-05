@@ -1,10 +1,10 @@
-package com.gabez.app_database.room_database
+package com.gabez.data_access.data.interfaces.local_database
 
 import com.gabez.app_database.room_database.entity.Perk
 import com.gabez.app_database.room_database.entity.ShortPerkVotes
 import com.gabez.app_database.room_database.entity.Toilet
 
-interface DatabaseGateway {
+interface LocalDatasource {
     fun getAllToilets(): List<Toilet>
     fun getToiletById(toiletId: String): List<Toilet>
     fun insertToilet(toilet: Toilet)

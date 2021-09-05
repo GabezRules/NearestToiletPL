@@ -9,7 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
-import com.gabez.nearesttoiletpl.location.LocationUtils
+import com.gabez.data_access.LocationUtils
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 

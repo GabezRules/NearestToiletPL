@@ -1,4 +1,4 @@
-package com.gabez.nearesttoiletpl.location
+package com.gabez.data_access
 
 import android.Manifest
 import android.annotation.SuppressLint

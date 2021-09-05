@@ -1,8 +1,8 @@
-package com.gabez.nearesttoiletpl.data
+package com.gabez.data_access.data.implementations
 
-import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
-import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
-import com.gabez.nearesttoiletpl.location.SearchBoundaries
+import com.gabez.data_access.data.interfaces.AppRepository
+import com.gabez.data_access.data.interfaces.api.UserCountryDatasource
+import com.gabez.data_access.SearchBoundaries
 import retrofit2.Response
 import javax.inject.Inject
 

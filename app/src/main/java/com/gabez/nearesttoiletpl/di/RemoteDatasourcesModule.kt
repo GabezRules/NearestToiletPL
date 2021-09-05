@@ -2,8 +2,8 @@ package com.gabez.nearesttoiletpl.di
 
 import com.gabez.locationiq_api.api.location_iq.LocationIQAutocompleteInterface
 import com.gabez.locationiq_api.api.location_iq.LocationIQReverseGeocodingInterface
-import com.gabez.nearesttoiletpl.data.LocationIqDatasource
-import com.gabez.nearesttoiletpl.data.interfaces.UserCountryDatasource
+import com.gabez.data_access.data.implementations.api.LocationIqDatasource
+import com.gabez.data_access.data.interfaces.api.UserCountryDatasource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

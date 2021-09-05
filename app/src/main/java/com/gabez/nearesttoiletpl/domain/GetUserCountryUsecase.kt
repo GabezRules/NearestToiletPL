@@ -1,6 +1,6 @@
 package com.gabez.nearesttoiletpl.domain
 
-import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
+import com.gabez.data_access.data.interfaces.AppRepository
 import retrofit2.Response
 import javax.inject.Inject
 

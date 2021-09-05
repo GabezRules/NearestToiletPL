@@ -1,6 +1,6 @@
-package com.gabez.nearesttoiletpl.data.interfaces
+package com.gabez.data_access.data.interfaces
 
-import com.gabez.nearesttoiletpl.location.SearchBoundaries
+import com.gabez.data_access.SearchBoundaries
 import retrofit2.Response
 
 interface AppRepository {

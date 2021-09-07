@@ -12,10 +12,10 @@ class NetworkStatusChangedReceiver : BroadcastReceiver() {
         val status: Int = NetworkUtil.getConnectivityStatusString(context)
         if ("android.net.conn.CONNECTIVITY_CHANGE" == intent.action) {
             if (status == NetworkUtil.NETWORK_STATUS_NOT_CONNECTED) {
-                if (CurrentActivityUtil.currentActivityClassName == StartActivity.javaClass.name)
+                if (CurrentActivityUtil.currentActivityClassName == StartActivity::class.java.name)
                     StartActivity.showNoInternetDialog()
             } else {
-                if (CurrentActivityUtil.currentActivityClassName == StartActivity.javaClass.name)
+                if (CurrentActivityUtil.currentActivityClassName == StartActivity::class.java.name)
                     StartActivity.hideNoInternetDialog()
             }
         }

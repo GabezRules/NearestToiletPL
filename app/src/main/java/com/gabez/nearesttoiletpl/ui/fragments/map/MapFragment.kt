@@ -118,7 +118,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
             val position = LatLng(toilet.lat, toilet.lon)
             val markeroptions = MarkerOptions()
                 .position(position)
-                .title(toilet.neighbourhood + ", " + toilet.road)
+                .title(toilet.displayName)
                 .snippet(toilet.displayName)
 
             map.addMarker(

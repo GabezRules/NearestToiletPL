@@ -1,8 +1,8 @@
 package com.gabez.nearesttoiletpl.di
 
 import android.content.Context
-import com.gabez.data_access.data.interfaces.local_database.LocalDatasource
 import com.gabez.data_access.data.implementations.local_database.LocalDatasourceImpl
+import com.gabez.data_access.data.interfaces.local_database.LocalDatasource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

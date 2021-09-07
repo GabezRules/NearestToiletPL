@@ -2,13 +2,14 @@ package com.gabez.data_access.data.implementations.local_database
 
 import android.content.Context
 import androidx.room.Room
+import com.gabez.data_access.data.interfaces.local_database.LocalDatasource
 import com.gabez.app_database.room_database.NearestToiletAppDatabase
 import com.gabez.app_database.room_database.entity.DatabasePerk
 import com.gabez.app_database.room_database.entity.DatabaseShortPerkVotes
 import com.gabez.app_database.room_database.entity.DatabaseToilet
 
 class LocalDatasourceImpl(val context: Context):
-    com.gabez.data_access.data.interfaces.local_database.LocalDatasource {
+    LocalDatasource {
 
     private val db: NearestToiletAppDatabase by lazy {
         Room.databaseBuilder(

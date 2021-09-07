@@ -32,11 +32,9 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
 
         navigateBtn.setOnClickListener { hideBottomSheetDialog() }
 
-        val titleString: String = toilet.displayName.split(", ").subList(0, 3).joinToString(", ")
-
         rateCount.text = "(${toilet.rateCount})"
         ratingBar.rating = toilet.rate
-        title.text = titleString
+        title.text = toilet.displayName
 
         rateBtn.setOnClickListener {
             hideBottomSheetDialog()
@@ -51,6 +49,7 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
         val divider3 = bottomSheetDialog.findViewById<View>(R.id.divider3)!!
 
         val prefs: SharedPreferences = context.getPreferences(Context.MODE_PRIVATE)
+
         val languageString =
             prefs.getString(SharedPreferenceKeys.languageOption, LanguageOption.ENG.languageString)
 

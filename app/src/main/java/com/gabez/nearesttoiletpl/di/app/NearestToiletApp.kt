@@ -1,4 +1,4 @@
-package com.gabez.nearesttoiletpl.di
+package com.gabez.nearesttoiletpl.di.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

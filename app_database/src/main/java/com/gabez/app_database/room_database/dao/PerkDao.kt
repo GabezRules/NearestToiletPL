@@ -4,23 +4,23 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.gabez.app_database.room_database.entity.Perk
+import com.gabez.app_database.room_database.entity.DatabasePerk
 
 @Dao
 interface PerkDao {
-    @Query("SELECT * FROM perk")
-    fun getAllPerks(): List<Perk>
+    @Query("SELECT * FROM databaseperk")
+    fun getAllPerks(): List<DatabasePerk>
 
-    @Query("SELECT * FROM perk WHERE id = :perkId")
-    fun getPerkById(perkId: Int): List<Perk>
+    @Query("SELECT * FROM databaseperk WHERE id = :perkId")
+    fun getPerkById(perkId: Int): List<DatabasePerk>
 
     @Insert
-    fun insertPerk(perk: Perk)
+    fun insertPerk(databasePerk: DatabasePerk)
 
     @Delete
-    fun deletePerk(perk: Perk)
+    fun deletePerk(databasePerk: DatabasePerk)
 
-    @Query("DELETE FROM perk")
+    @Query("DELETE FROM databaseperk")
     fun deleteAllPerks()
 
 }

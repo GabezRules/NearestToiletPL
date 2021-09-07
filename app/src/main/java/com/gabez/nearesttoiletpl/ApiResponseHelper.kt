@@ -1,9 +1,9 @@
 package com.gabez.nearesttoiletpl
 
 import android.util.Log
-import com.gabez.app_database.room_database.entity.Toilet
-import com.gabez.locationiq_api.api.ApiResponse
-import com.gabez.locationiq_api.api.ApiResponseStatus
+import com.gabez.data_access.data.ApiResponse
+import com.gabez.data_access.data.ApiResponseStatus
+import com.gabez.data_access.entity.Toilet
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

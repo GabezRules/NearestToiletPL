@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class ShortPerkVotes(
+data class DatabaseShortPerkVotes(
     @PrimaryKey val id: Int,
 
     @ColumnInfo(name = "toilet_id")

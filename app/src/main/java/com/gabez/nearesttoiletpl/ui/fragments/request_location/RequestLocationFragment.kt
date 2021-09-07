@@ -1,8 +1,7 @@
 package com.gabez.nearesttoiletpl.ui.fragments.request_location
 
 import android.Manifest
-import android.Manifest.permission.ACCESS_COARSE_LOCATION
-import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.Manifest.permission.*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +24,7 @@ class RequestLocationFragment : Fragment() {
 
         val grantPermissionButton: MaterialButton = view.findViewById(R.id.buttonGrantPermission)
         grantPermissionButton.setOnClickListener {
-            requestPermissionLauncher.launch(arrayOf(ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION))
+            requestPermissionLauncher.launch(arrayOf(ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_NETWORK_STATE))
         }
 
         return view

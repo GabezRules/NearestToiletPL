@@ -1,13 +1,10 @@
 package com.gabez.data_access.data.interfaces
 
+import com.gabez.data_access.Place
 import com.gabez.data_access.SearchBoundaries
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ServiceComponent
-import dagger.hilt.components.SingletonComponent
-import retrofit2.Response
+import kotlinx.coroutines.flow.Flow
 
 interface AppRepository {
-    suspend fun getUserLocationCountry(lat: String, lon: String): Response<String>
-    suspend fun getNearbyToilets(bounds: SearchBoundaries): Response<String>
+    suspend fun getUserLocationCountry(lat: String, lon: String): Flow<String>
+    suspend fun getNearbyToilets(bounds: SearchBoundaries): Flow<List<Place>>
 }

@@ -9,19 +9,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
+import com.gabez.data_access.entity.Toilet
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.app_database.room_database.entity.Toilet
 import com.gabez.nearesttoiletpl.language_options.LanguageOption
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openRateToiletCallback: OpenRateToiletCallback) {
-    private var bottomSheetDialog: BottomSheetDialog
-
-    init {
-        bottomSheetDialog = BottomSheetDialog(context)
-    }
+    private var bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(context)
 
     fun showBottomSheetDialog() {
         bottomSheetDialog.setContentView(R.layout.fragment_toilet_details)

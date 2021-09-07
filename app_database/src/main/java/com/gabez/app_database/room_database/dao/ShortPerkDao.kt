@@ -4,22 +4,22 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.gabez.app_database.room_database.entity.ShortPerkVotes
+import com.gabez.app_database.room_database.entity.DatabaseShortPerkVotes
 
 @Dao
 interface ShortPerkDao {
-    @Query("SELECT * FROM shortperkvotes WHERE toilet_id = :toiletId")
-    fun getAllByToilet(toiletId: String): List<ShortPerkVotes>
+    @Query("SELECT * FROM databaseshortperkvotes WHERE toilet_id = :toiletId")
+    fun getAllByToilet(toiletId: String): List<DatabaseShortPerkVotes>
 
     @Delete
-    fun deleteShortPerk(perk: ShortPerkVotes)
+    fun deleteShortPerk(perkDatabase: DatabaseShortPerkVotes)
 
     @Insert
-    fun insertShortPerk(perk: ShortPerkVotes)
+    fun insertShortPerk(perkDatabase: DatabaseShortPerkVotes)
 
-    @Query("UPDATE shortperkvotes SET votes = :newVotes WHERE id = :perkId")
+    @Query("UPDATE databaseshortperkvotes SET votes = :newVotes WHERE id = :perkId")
     fun updateVotesForShortPerk(perkId: Int, newVotes: Int)
 
-    @Query("DELETE FROM shortperkvotes")
+    @Query("DELETE FROM databaseshortperkvotes")
     fun deleteAllShortPerks()
 }

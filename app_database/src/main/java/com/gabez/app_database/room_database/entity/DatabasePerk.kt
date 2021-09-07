@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Perk(
+data class DatabasePerk(
     @PrimaryKey val id: Int,
 
     @ColumnInfo(name = "name_pl")

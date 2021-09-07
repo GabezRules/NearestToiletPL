@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
 import com.gabez.data_access.LocationUtils
 import com.gabez.data_access.data.ApiResponseStatus
-import com.gabez.data_access.entity.Toilet
+import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.gabez.nearesttoiletpl.ui.fragments.toilet_details.ToiletDetailsFragment

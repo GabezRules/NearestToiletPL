@@ -3,7 +3,7 @@ package com.gabez.nearesttoiletpl
 import android.util.Log
 import com.gabez.data_access.data.ApiResponse
 import com.gabez.data_access.data.ApiResponseStatus
-import com.gabez.data_access.entity.Toilet
+import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

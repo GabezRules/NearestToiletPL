@@ -8,7 +8,7 @@ import com.gabez.nearesttoiletpl.domain.GetNearbyToiletsUsecase
 import com.gabez.data_access.LocationUtils
 import com.gabez.data_access.data.ApiResponse
 import com.gabez.data_access.data.ApiResponseStatus
-import com.gabez.data_access.entity.Toilet
+import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.gabez.data_access.entity
+package com.gabez.nearesttoiletpl.domain.entity
 
 data class Toilet(
     val placeId: String,

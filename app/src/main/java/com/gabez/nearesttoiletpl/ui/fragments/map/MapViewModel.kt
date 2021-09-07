@@ -3,12 +3,12 @@ package com.gabez.nearesttoiletpl.ui.fragments.map
 import android.content.Context
 import android.location.Location
 import androidx.lifecycle.*
-import com.gabez.nearesttoiletpl.api.ApiResponse
-import com.gabez.nearesttoiletpl.api.ApiResponseStatus
-import com.gabez.nearesttoiletpl.api.helpers.ApiResponseHelper
+import com.gabez.nearesttoiletpl.ApiResponseHelper
 import com.gabez.nearesttoiletpl.domain.GetNearbyToiletsUsecase
+import com.gabez.data_access.LocationUtils
+import com.gabez.data_access.data.ApiResponse
+import com.gabez.data_access.data.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
-import com.gabez.nearesttoiletpl.location.LocationUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -9,19 +9,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
+import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.language_options.LanguageOption
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openRateToiletCallback: OpenRateToiletCallback) {
-    private var bottomSheetDialog: BottomSheetDialog
-
-    init {
-        bottomSheetDialog = BottomSheetDialog(context)
-    }
+    private var bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(context)
 
     fun showBottomSheetDialog() {
         bottomSheetDialog.setContentView(R.layout.fragment_toilet_details)
@@ -71,11 +67,14 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
                 val icon = perkView.findViewById<ImageView>(R.id.perkIcon);
                 val perkText = perkView.findViewById<TextView>(R.id.perkText);
 
+                //TODO: Get perks from database
+                /*
                 if (languageString == LanguageOption.ENG.languageString) perkText.text =
                     "(${perk.votes})${perk.nameEng}"
                 else perkText.text = "(${perk.votes})${perk.namePl}"
 
                 icon.setImageDrawable(perk.icon)
+                */
 
                 perksContainer.addView(perkView)
             }

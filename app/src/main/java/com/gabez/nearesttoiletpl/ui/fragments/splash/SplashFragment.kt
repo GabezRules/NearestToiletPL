@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.gabez.data_access.LocationUtils
+import com.gabez.data_access.data.ApiResponseStatus
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.nearesttoiletpl.api.ApiResponseStatus
 import com.gabez.nearesttoiletpl.language_options.LanguageOptionsHelper
-import com.gabez.nearesttoiletpl.location.LocationUtils
-import com.gabez.nearesttoiletpl.ui.fragments.StartActivity
 import com.gabez.nearesttoiletpl.ui.fragments.MainActivity
+import com.gabez.nearesttoiletpl.ui.fragments.StartActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,13 +44,16 @@ class SplashFragment : Fragment() {
             findNavController().navigate(R.id.action_splashFragment_to_requestLocationFragment)
         } else {
             viewModel.isUserInDesiredLocation(requireContext())
-            viewModel.getUserLocationLiveData().observe(viewLifecycleOwner, Observer{ response ->
+            viewModel.getUserLocationLiveData().observe(viewLifecycleOwner, Observer { response ->
                 if (response != null) {
                     when (response.status) {
                         ApiResponseStatus.OK -> {
                             if (response.data!!.toString().equals("Poland")) {
 
-                                val i: Intent = Intent(StartActivity.startActivityContext, MainActivity::class.java)
+                                val i: Intent = Intent(
+                                    StartActivity.startActivityContext,
+                                    MainActivity::class.java
+                                )
                                 startActivity(i)
                                 StartActivity.startActivityContext.finish()
 

@@ -1,8 +1,7 @@
 package com.gabez.nearesttoiletpl.domain
 
-import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
-import com.gabez.nearesttoiletpl.location.SearchBoundaries
-import dagger.hilt.android.AndroidEntryPoint
+import com.gabez.data_access.data.interfaces.AppRepository
+import com.gabez.data_access.SearchBoundaries
 import retrofit2.Response
 import javax.inject.Inject
 

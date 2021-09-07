@@ -1,6 +1,7 @@
 package com.gabez.nearesttoiletpl.ui.fragments.request_location
 
 import android.Manifest
+import android.Manifest.permission.*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
-import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,8 +24,7 @@ class RequestLocationFragment : Fragment() {
 
         val grantPermissionButton: MaterialButton = view.findViewById(R.id.buttonGrantPermission)
         grantPermissionButton.setOnClickListener {
-            requestPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
-            requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+            requestPermissionLauncher.launch(arrayOf(ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_NETWORK_STATE))
         }
 
         return view
@@ -33,18 +32,12 @@ class RequestLocationFragment : Fragment() {
 
     val requestPermissionLauncher =
         registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted: Boolean ->
-            if (isGranted) {
-                if(LocationUtils.hasLocationPermissions(requireContext())){
-                    findNavController().navigate(R.id.action_requestLocationFragment_to_splashFragment)
-                }
-            } else {
-                // Explain to the user that the feature is unavailable because the
-                // features requires a permission that the user has denied. At the
-                // same time, respect the user's decision. Don't link to system
-                // settings in an effort to convince the user to change their
-                // decision.
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) {
+            permissions ->
+
+            if (permissions[ACCESS_COARSE_LOCATION] == true && permissions[ACCESS_FINE_LOCATION] == true) {
+                findNavController().navigate(R.id.action_requestLocationFragment_to_splashFragment)
             }
         }
 

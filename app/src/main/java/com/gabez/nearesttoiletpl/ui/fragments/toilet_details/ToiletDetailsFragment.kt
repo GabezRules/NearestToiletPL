@@ -9,20 +9,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
+import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.R
 import com.gabez.nearesttoiletpl.SharedPreferenceKeys
-import com.gabez.nearesttoiletpl.domain.entity.Toilet
 import com.gabez.nearesttoiletpl.language_options.LanguageOption
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import dagger.hilt.android.AndroidEntryPoint
 
 class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openRateToiletCallback: OpenRateToiletCallback) {
-    private var bottomSheetDialog: BottomSheetDialog
-
-    init {
-        bottomSheetDialog = BottomSheetDialog(context)
-    }
+    private var bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(context)
 
     fun showBottomSheetDialog() {
         bottomSheetDialog.setContentView(R.layout.fragment_toilet_details)
@@ -37,11 +32,9 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
 
         navigateBtn.setOnClickListener { hideBottomSheetDialog() }
 
-        val titleString: String = toilet.displayName.split(", ").subList(0, 3).joinToString(", ")
-
         rateCount.text = "(${toilet.rateCount})"
         ratingBar.rating = toilet.rate
-        title.text = titleString
+        title.text = toilet.displayName
 
         rateBtn.setOnClickListener {
             hideBottomSheetDialog()
@@ -56,10 +49,11 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
         val divider3 = bottomSheetDialog.findViewById<View>(R.id.divider3)!!
 
         val prefs: SharedPreferences = context.getPreferences(Context.MODE_PRIVATE)
+
         val languageString =
             prefs.getString(SharedPreferenceKeys.languageOption, LanguageOption.ENG.languageString)
 
-        if (toilet.perks.size == 0) {
+        if (toilet.perkIds.size == 0) {
             perksContainer.visibility = View.GONE
             divider3.visibility = View.GONE
         } else {
@@ -67,16 +61,19 @@ class ToiletDetailsFragment(val toilet: Toilet, val context: Activity, val openR
 
             val inflater: LayoutInflater = context.layoutInflater
 
-            for (perk in toilet.perks) {
+            for (perk in toilet.perkIds) {
                 val perkView: View = inflater.inflate(R.layout.view_perk, null)
                 val icon = perkView.findViewById<ImageView>(R.id.perkIcon);
                 val perkText = perkView.findViewById<TextView>(R.id.perkText);
 
+                //TODO: Get perks from database
+                /*
                 if (languageString == LanguageOption.ENG.languageString) perkText.text =
                     "(${perk.votes})${perk.nameEng}"
                 else perkText.text = "(${perk.votes})${perk.namePl}"
 
                 icon.setImageDrawable(perk.icon)
+                */
 
                 perksContainer.addView(perkView)
             }

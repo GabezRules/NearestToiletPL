@@ -1,13 +1,10 @@
 package com.gabez.nearesttoiletpl.domain
 
-import androidx.lifecycle.LiveData
-import com.gabez.nearesttoiletpl.api.ApiResponse
-import com.gabez.nearesttoiletpl.data.AppRepositoryImpl
-import com.gabez.nearesttoiletpl.data.interfaces.AppRepository
-import retrofit2.Response
+import com.gabez.data_access.data.interfaces.AppRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetUserCountryUsecase @Inject constructor(val appRepository: AppRepository) {
 
-    suspend fun invoke(lat: String, lon: String): Response<String> = appRepository.getUserLocationCountry(lat, lon)
+    suspend fun invoke(lat: String, lon: String): Flow<String> = appRepository.getUserLocationCountry(lat, lon)
 }

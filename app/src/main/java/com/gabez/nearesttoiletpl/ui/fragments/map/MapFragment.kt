@@ -8,15 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gabez.nearesttoiletpl.R
-import com.gabez.nearesttoiletpl.api.ApiResponseStatus
+import com.gabez.data_access.LocationUtils
+import com.gabez.data_access.data.ApiResponseStatus
 import com.gabez.nearesttoiletpl.domain.entity.Toilet
-import com.gabez.nearesttoiletpl.location.LocationUtils
 import com.gabez.nearesttoiletpl.ui.CurrentActivityUtil
 import com.gabez.nearesttoiletpl.ui.fragments.rate_toilet.OpenRateToiletCallback
 import com.gabez.nearesttoiletpl.ui.fragments.toilet_details.ToiletDetailsFragment
@@ -120,7 +118,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
             val position = LatLng(toilet.lat, toilet.lon)
             val markeroptions = MarkerOptions()
                 .position(position)
-                .title(toilet.neighbourhood + ", " + toilet.road)
+                .title(toilet.displayName)
                 .snippet(toilet.displayName)
 
             map.addMarker(

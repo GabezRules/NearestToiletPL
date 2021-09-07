@@ -1,2 +1,5 @@
+include ':data_access'
+include ':app_database'
+include ':locationiq_api'
 include ':app'
 rootProject.name = "NearestToiletPL"
